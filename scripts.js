@@ -18,7 +18,22 @@ function randGenerate(event){
 // podłączyć guzik random_generate do funkcji randGenerate
 random_generate.addEventListener('click', randGenerate);
 
-function silnia(n){
+
+const silnia = document.querySelector("#silnia-module")
+
+const silnia_input = silnia.querySelector("#silnia-input")
+const silnia_solution = silnia.querySelector("#silnia-solution")
+const silnia_calculate = silnia.querySelector("#silnia-calculate")
+
+function sil(n){
 	if(n <= 0) return 1;
-	return n * silnia(n-1);
+	return n * sil(n-1);
 }
+
+function silniaCalculate() {
+	const n = parseInt(silnia_input.value);
+	silnia_solution.textContent = sil( n );
+}
+
+silnia_calculate.addEventListener('click',silniaCalculate);
+silnia_input.addEventListener('change',silniaCalculate);
