@@ -23,8 +23,13 @@ body{
 .module>*{
 	margin-bottom: 0.25rem;;
 }
+.module input[type="number"]{
+	width:30%;
+	text-align: right;
+}
 .spread{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: baseline;
 }
